@@ -81,6 +81,5 @@
     },
     "registeredAt": "2025-06-30T00:19:49.015Z",
     "registeredBy": "arn:aws:iam::727646465238:user/ctn-cicd-hdon",
-    "enableFaultInjection": false,
-    "tags": []
+    "enableFaultInjection": false
 }

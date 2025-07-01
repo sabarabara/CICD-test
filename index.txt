@@ -243,3 +243,25 @@ AWSCodeDeployRoleForECS
 
 IAMで以下をロールに含んで作成
 
+CodePiplineの作成
+カスタムパイプラインを選択
+repositoryをgithub(http)から選択
+->はじめてgithubをawsを連携するときはthis repository not master(main)branchとなるため修正が必要
+これはgithubからgitAppでAWS Connector for GitHubをinstall でOK
+リポジトリ名とbranchを定義
+
+その後
+buildstage -> CodeBuild
+build からプロジェクトネームを作成(後述)
+
+///CodeBuildに環境を埋め込む必要あり
+
+teststageをスキップ
+その後デプロイステージではamazon ECS Blue/Greenを選択
+Aretifactは両方ともまずはbuildを選択後に 後にsourceに変更
+
+//build,sourceの違い
+
+sourcearetifactとはdockerfileやspecファイル、などの静的ファイル、
+buildaretifactとはimageDetail.jsonの動的にタスクの名前が生成ごとに入れ替える時などに用いる
+
