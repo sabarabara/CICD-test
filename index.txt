@@ -265,3 +265,4 @@ Aretifactは両方ともまずはbuildを選択後に 後にsourceに変更
 sourcearetifactとはdockerfileやspecファイル、などの静的ファイル、
 buildaretifactとはimageDetail.jsonの動的にタスクの名前が生成ごとに入れ替える時などに用いる
 
+tag is empty ->tag[]をけせば動く
