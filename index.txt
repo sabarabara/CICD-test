@@ -209,3 +209,37 @@ AWS CodePipline
 HANDSON/////////////////////////////////////////////////////////////////////////////
 
 imageDetail.json->これはタスクが変更ごとに変化するからである
+sgをHTTP(port80)とカスタムTCP(port8080)でさくせい
+TCPはテスト
+EC2のからELBへ
+ALBの作成
+まずALB subnet vpnをセット、ターゲットは仮のものを設定
+その後リスナーとtgを削除する
+
+serviceの作成
+
+サービスの詳細設定
+ネットワーキングにvpc,subnet,sgを紐づける
+
+サービス検出に名前空間をつける
+
+ロードバランシングの設定でALBを選択
+既存のものから先ほどのalbを選択、リスナー、ターゲットグループを作成
+ここではリスナーは上記の通りに8080のテストと80の本番環境でふたつ
+
+Autoscalingの設定
+task 2-2で最小、最大の設定
+ポリシー名、を設定後ECSサービスメトリクスからECSServiceAverageCPUUtilization
+tar 300
+300
+300
+
+<-IAMのサービスロールがなくて積むのでしっかりやろう
+やり方
+
+ポリシー名
+AmazonS3FullAccess
+AWSCodeDeployRoleForECS
+
+IAMで以下をロールに含んで作成
+
